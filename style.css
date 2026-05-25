@@ -43,7 +43,6 @@ nav {
   position: sticky;
   top: 0;
   z-index: 999;
-  position: relative;
 }
 
 .logo {
@@ -100,6 +99,7 @@ nav a:hover {
 
 .menu-toggle {
   display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: transparent;
@@ -555,6 +555,7 @@ p {
   nav.open ul, nav.open > ul {
     display: flex !important;
     flex-direction: column;
+    position: static;
     width: 100%;
     background: rgba(0,0,0,0.85); /* Przyciemnione tło, by napisy były czytelne */
     padding: 15px 0 20px;
@@ -592,7 +593,7 @@ p {
   }
 
   .menu-toggle {
-    display: block !important;
+    display: inline-flex !important;
   }
 
   nav ul {
@@ -607,6 +608,7 @@ p {
   /* WYMUSZENIE POKAZANIA NA MAŁYM TELEFONIE */
   nav.open ul, nav.open > ul {
     display: flex !important;
+    position: static;
   }
 
   nav ul li {

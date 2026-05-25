@@ -30,23 +30,34 @@ function createStars(count = 150) {
 
 createStars();
 
-// menu toggle (safe: only if button exists)
-document.querySelectorAll('.menu-toggle').forEach(button => {
-  button.addEventListener('click', () => {
-    const nav = button.closest('nav');
-    if (nav) nav.classList.toggle('open');
-  });
-});
+function setupMenuToggle() {
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('nav');
 
-// close menu when clicking a link (safe guard)
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    const nav = link.closest('nav');
-    if (nav && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-    }
+  if (!toggleBtn || !mainNav) return;
+
+  toggleBtn.type = 'button';
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', String(isOpen));
   });
-});
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mainNav.classList.contains('open')) {
+        mainNav.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupMenuToggle);
+} else {
+  setupMenuToggle();
+}
 
 document.querySelectorAll(".gallery img").forEach(img => {
   img.addEventListener("click", () => {
@@ -108,22 +119,3 @@ if (slides && slides.length > 0) {
   }, 5000);
 }
 
-// Czekamy na pełne załadowanie strony HTML
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('nav');
-
-  // Sprawdzamy czy elementy na pewno są w kodzie strony
-  if (toggleBtn && mainNav) {
-    
-    // Funkcja przełączająca klasę .open
-    const handleMenu = (e) => {
-      e.preventDefault(); // Blokuje domyślne zachowania przeglądarki
-      mainNav.classList.toggle('open');
-    };
-
-    // Podpinamy pod kliknięcie myszką ORAZ dotknięcie palcem na telefonie
-    toggleBtn.addEventListener('click', handleMenu);
-    toggleBtn.addEventListener('touchstart', handleMenu);
-  }
-});
