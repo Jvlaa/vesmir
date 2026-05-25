@@ -102,28 +102,33 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: none;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
   cursor: pointer;
   padding: 10px;
   color: white;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  position: relative;
+  margin-left: auto;
+  transform: none;
   z-index: 1000;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+}
+
+.menu-toggle:hover {
+  background: rgba(255,255,255,0.18);
 }
 
 .menu-toggle span {
   display: block;
-  width: 28px;
+  width: 24px;
   height: 3px;
-  margin: 5px 0;
+  border-radius: 999px;
   background: white;
-  border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 4px 0;
 }
 
 nav.open .menu-toggle span:nth-child(1) {
@@ -540,11 +545,6 @@ p {
     position: relative;
   }
 
-  .menu-toggle {
-    display: inline-flex !important; /* Wymuszamy pokazanie hamburgera */
-    cursor: pointer;
-  }
-
   .logo {
     font-size: 20px;
   }
@@ -554,13 +554,17 @@ p {
     gap: 15px;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   /* WYMUSZENIE POKAZANIA MENU */
   nav.open ul, nav.open > ul {
     display: flex !important;
     flex-direction: column;
     position: static;
     width: 100%;
-    background: rgba(0,0,0,0.85); /* Przyciemnione tło, by napisy były czytelne */
+    background: rgba(0,0,0,0.85); /* Przyciemnione tło, by napisy byly čitelné */
     padding: 15px 0 20px;
     border-radius: 0 0 20px 20px;
   }
@@ -588,11 +592,18 @@ p {
   }
 }
 
+@media (min-width: 1201px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
 @media (max-width: 700px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
+    padding: 16px 20px;
   }
 
   .menu-toggle {
@@ -600,6 +611,14 @@ p {
     position: static;
     margin-left: auto;
     transform: none;
+    order: 2;
+    border-radius: 18px;
+    background: rgba(0,0,0,0.65) !important;
+    border: 1px solid rgba(255,255,255,0.65) !important;
+    box-shadow: 0 0 18px rgba(0,0,0,0.35) !important;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
   }
 
   nav ul {
