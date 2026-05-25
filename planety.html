@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planety</title>
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<nav>
+<div class="logo">SPACE EXPLORER</div>
+<button class="menu-toggle" aria-label="Otevřít menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<ul>
+<li><a href="index.html">Domů</a></li>
+<li><a href="planety.html">Planety</a></li>
+<li><a href="cerne-diry.html">Černé díry</a></li>
+<li><a href="mise.html">Mise</a></li>
+<li><a href="galerie.html">Galerie</a></li>
+</ul>
+</nav>
+
+<h1>SLUNEČNÍ SOUSTAVA</h1>
+
+<div class="solar-system">
+
+<div class="sun"></div>
+
+<div class="orbit mercury-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg"
+  class="planet mercury"
+  onclick="openPlanet('Merkur','Merkur je nejbližší planeta ke Slunci. Je velmi malý a má extrémní teploty. Přes den může být velmi horký, zatímco v noci teplota výrazně klesá. Merkur nemá téměř žádnou atmosféru.')">
+</div>
+
+<div class="orbit venus-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg"
+  class="planet venus"
+  onclick="openPlanet('Venuše','Venuše je druhá planeta od Slunce a často bývá označována jako sesterská planeta Země, protože má podobnou velikost. Ve skutečnosti je však velmi nehostinná. Atmosféra Venuše obsahuje velké množství oxidu uhličitého a vytváří silný skleníkový efekt.')">
+</div>
+
+<div class="orbit earth-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
+  class="planet earth"
+  onclick="openPlanet('Země','Země je jediná známá planeta, na které existuje život. Obsahuje vodu, kyslík a vhodné podmínky pro rostliny, zvířata i lidi. Země má jeden přirozený satelit – Měsíc.')">
+</div>
+
+<div class="orbit mars-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg"
+  class="planet mars"
+  onclick="openPlanet('Mars','Mars je známý jako rudá planeta kvůli svému červenému povrchu. Vědci se domnívají, že na Marsu mohla kdysi existovat voda. Dnes je Mars jedním z hlavních cílů budoucích vesmírných misí.')">
+</div>
+
+<div class="orbit jupiter-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg"
+  class="planet jupiter"
+  onclick="openPlanet('Jupiter','Jupiter je největší planeta Sluneční soustavy. Je tvořen převážně plyny a má obrovskou bouři známou jako Velká rudá skvrna. Jupiter má desítky měsíců.')">
+</div>
+
+<div class="orbit saturn-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg"
+  class="planet saturn"
+  onclick="openPlanet('Saturn','Saturn je známý svými nádhernými prstenci. Ty jsou tvořeny ledem a kamením. Saturn je také plynný obr a patří mezi největší planety.')">
+</div>
+
+<div class="orbit uranus-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg"
+  class="planet uranus"
+  onclick="openPlanet('Uran','Uran je sedmá planeta Sluneční soustavy a patří mezi ledové obry. Má modrozelenou barvu kvůli metanu v atmosféře a je známý svým neobvyklým nakloněním, protože se otáčí téměř „naležato“. Uran je velmi chladný a má několik měsíců i slabé prstence.')">
+</div>
+
+<div class="orbit neptune-orbit">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg"
+  class="planet neptune"
+  onclick="openPlanet('Neptun','Neptun je nejvzdálenější planeta Sluneční soustavy. Má tmavě modrou barvu a extrémně silné větry, které patří k nejrychlejším ve vesmíru. Neptun je ledový obr s velmi nízkými teplotami a jeho nejznámějším měsícem je Triton.')">
+</div>
+
+</div>
+
+<div class="popup" id="popup">
+<span class="close" onclick="closePopup()">✖</span>
+
+<h2 id="popup-title"></h2>
+<p id="popup-text"></p>
+</div>
+
+<script src="script.js?v=99" defer></script>
+
+</body>
+</html>

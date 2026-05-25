@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie</title>
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<nav>
+<div class="logo">SPACE EXPLORER</div>
+<button class="menu-toggle" aria-label="Otevřít menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<ul>
+<li><a href="index.html">Domů</a></li>
+<li><a href="planety.html">Planety</a></li>
+<li><a href="cerne-diry.html">Černé díry</a></li>
+<li><a href="mise.html">Mise</a></li>
+<li><a href="galerie.html">Galerie</a></li>
+</ul>
+</nav>
+
+<h1>GALERIE VESMÍRU</h1>
+
+<div class="slideshow">
+
+  <div class="slide active">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg">
+    <p>Země – náš domov ve vesmíru</p>
+  </div>
+
+  <div class="slide">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg">
+    <p>Jupiter – největší planeta sluneční soustavy</p>
+  </div>
+
+  <div class="slide">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg">
+    <p>Saturn – planeta s krásnými prstenci</p>
+  </div>
+
+  <div class="slide">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg">
+    <p>Neptun – nejvzdálenější planeta</p>
+  </div>
+
+</div>
+
+<div class="controls">
+  <button onclick="prevSlide()">⬅</button>
+  <button onclick="nextSlide()">➡</button>
+</div>
+
+<script src="script.js?v=99" defer></script>
+
+</body>
+</html>
