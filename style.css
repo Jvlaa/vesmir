@@ -71,7 +71,7 @@ nav.open ul {
   display: flex !important;
   flex-direction: column;
   position: absolute;
-  top: 60px;
+  top: 100%;
   right: 20px;
   background: rgba(0,0,0,0.9);
   padding: 12px 16px;
@@ -108,9 +108,12 @@ nav a:hover {
   padding: 10px;
   color: white;
   position: absolute;
-  top: 18px;
+  top: 50%;
   right: 20px;
+  transform: translateY(-50%);
   z-index: 1000;
+  width: 44px;
+  height: 44px;
 }
 
 .menu-toggle span {
@@ -594,10 +597,13 @@ p {
 
   .menu-toggle {
     display: inline-flex !important;
+    position: static;
+    margin-left: auto;
+    transform: none;
   }
 
   nav ul {
-    display: none !important; /* Domyślnie ukryte na telefonie */
+    display: none !important; /* Domyślně ukryte na telefonie */
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
@@ -605,10 +611,16 @@ p {
     padding-top: 10px;
   }
 
-  /* WYMUSZENIE POKAZANIA NA MAŁYM TELEFONIE */
+  /* WYMUSZENIE POKAZANIA NA MAŁÝM TELEFONIE */
   nav.open ul, nav.open > ul {
     display: flex !important;
-    position: static;
+    position: relative;
+    top: 0;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    border-radius: 0 0 20px 20px;
+    padding: 15px 0 20px;
+    width: 100%;
   }
 
   nav ul li {
